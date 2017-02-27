@@ -1,0 +1,144 @@
+@charset "utf-8";
+/* CSS Document */
+
+.divCarga {
+		width: 100%;
+		height: 100%;
+		z-index: 1005;
+		background-color:  #000;
+		position: fixed;
+		opacity: 0.75;
+		filter:alpha(opacity=75);
+		z-index: 1003;
+		display: none;
+		text-align:center;
+	}
+	
+.fontmensaje {
+		font-weight: bold;
+		font-size: 16px;
+	}
+
+
+
+#msj_exito{
+	z-index:1006;
+	position:fixed;
+	width:100%;
+	margin-top:100px;
+	text-align:center;
+	display:none;
+}
+
+#msj_exito div{
+	width:90%;
+	max-width:400px;
+	margin:auto;
+	box-shadow:#CCC 0px 0px 1em;
+}
+
+
+#msj_error{
+	z-index:1006;
+	position:fixed;
+	width:100%;
+	margin-top:100px;
+	text-align:center;
+	display:none;
+}
+
+#msj_error div{
+	width:90%;
+	max-width:400px;
+	margin:auto;
+	box-shadow:#CCC 0px 0px 1em;
+}
+
+
+
+
+#msj_advertencia{
+	z-index:1006;
+	position:fixed;
+	width:100%;
+	margin-top:100px;
+	text-align:center;
+	display:none;
+}
+
+#msj_advertencia div{
+	width:90%;
+	max-width:400px;
+	margin:auto;
+	box-shadow:#CCC 0px 0px 1em;
+}
+
+span.circ_cant{
+	background:#CCC;
+	color:#666;
+	font-size:10px;
+	padding:5px;
+}
+
+span.datos_per_menu{
+	padding:5px;
+	padding-left:10px !important;	
+}
+
+span.datos_per_menu img{ 
+	width:50px;
+	height:50px;
+	margin-left:10px;}
+	
+	
+div.footer{
+	width:100%;
+	position:fixed;
+	bottom:0px;
+	z-index:999;
+	background:#EAEAEA;
+	padding-top:5px;
+	padding-bottom:5px;
+	padding:5px;
+	font-size:10px;
+		
+}
+
+.indicadores{
+	transition:all 0.3s ease;
+	-moz-transition:all 0.3s ease;
+	-ms-transition:all 0.3s ease;
+	-o-transition:all 0.3s ease;
+	-webkit-transition:all 0.3s ease;	
+}
+
+.indicadores:hover{
+	transform:scale(1.1,1.1);
+	-moz-transform:scale(1.1,1.1);
+	-ms-transform:scale(1.1,1.1);
+	-o-transform:scale(1.1,1.1);
+	-webkit-transform:scale(1.1,1.1);	
+	box-shadow:0px 0px 1em #999;
+}
+
+
+ul.ul-acciones{ padding:0px; list-style:none}
+ul.ul-acciones li{ display:table-cell; padding-left:5px; padding-right:5px;}
+ul.ul-acciones li a span{ font-size:16px;}
+
+.div-status{ margin:0px; padding:0px; font-weight:bold; text-align:center}
+
+.td-acciones{ text-align:center}
+
+.list_modulos{ padding-left:0px; list-style:none}
+
+
+.img_user{ width:150px; border:#CCC solid 1px; height:150px; background:url(../img/person.jpg) center no-repeat; background-size:contain; background-color:#c3cee0; cursor:pointer}
+
+.img_cat_not{ width:300px; height:300px; border:#CCC solid 1px; background:url(../img/person.jpg) center no-repeat; background-size:contain; background-color:#c3cee0; cursor:pointer}
+.img_cat_pro{ width:300px; height:300px; border:#CCC solid 1px; background:url(../img/person.jpg) center no-repeat; background-size:contain; background-color:#c3cee0; cursor:pointer}
+
+
+
+
+

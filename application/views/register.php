@@ -343,15 +343,23 @@
                         </div>
                              
 		    				        
-		        <div class="col-sm-12">
-                          <button class="grey"><?=get_lang("registrar")?></button>
-                          <p class="terms"><?=get_lang("terminos-condiciones")?>.</p>      
+                       <div class="col-sm-12" id="registrar" >
+                            <button class="grey"><?=get_lang("registrar")?></button>
+                            <p class="terms"><?=get_lang("terminos-condiciones")?>.</p>      
                                 
-		          </div>
+		        </div>
+		        
                       
 		         <div class="clear"></div>
                        
 		    </form>
+                    <div class="col-sm-12" id="iniciarsesion" style="display: none;">
+                        <a href="<?=base_url()?>login">
+                            <button class="grey"><?=get_lang("login")?></button>
+                            <p class="terms"><?=get_lang("texto-login")?>.</p>      
+                        </a>   
+                    </div>
+              <div class="clear"></div>
     	  </div> 
         </div>
         <script src="<?=base_url()?>js/script_clientes.js"></script>

@@ -34,6 +34,10 @@ class Register extends CI_Controller {
     public function agregarCliente() {
         $resp = $this->Clientes_model->insert_client_contact();
         echo $resp;
+//        $idsesionviejo = $this->session->userdata("session_id");
+//        $ini = $this->inicio_model->ini_ses();		
+//        echo $ini;
+//        $this->carrito_model->actualizarIdSessionCarrito($idsesionviejo);
     }
 
 }

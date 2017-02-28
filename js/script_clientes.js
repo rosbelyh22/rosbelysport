@@ -59,7 +59,9 @@ $(document).ready(function (e) {
                     $("#form-agregar-cliente")[0].reset();
                     $("#msj_exito").fadeIn(3000);
                     $("#msj_exito").fadeOut(3000);
-                    setTimeout("redireccionarPagina()", 5000);
+                    $("#registrar").fadeOut(3000);
+                    $("#iniciarsesion").fadeIn(3000);
+                    //setTimeout("redireccionarPagina()", 5000);
                 } else if ($.trim(data) == "existe") {
                     $("#msj_existe").fadeIn(3000);
                     $("#msj_existe").fadeOut(3000);

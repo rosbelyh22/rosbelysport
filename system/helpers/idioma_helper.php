@@ -76,7 +76,7 @@ if ( ! function_exists('element'))
                                                 "ingrese-telefono"                      => "Enter your Phone",
                                                 "ingrese-mensaje"                       => "Enter your Message",
                                                 "ingrese-rif"                           => "Enter Your RIF / DNI",
-                                                "mensaje-footer"                        => "All logos used on this site are registered trademarks of each manufacturer, its use in this product <br>is only to promote their products or to indicate the sale thereof.",
+                                                "mensaje-footer"                        => "All logos used in this website are registered trademarks of each manufacturer, their use on this page is only to promote their products or to indicate the sale of them.",
                                                 "deseas-saber-nosotros"                 => "Want to know a little more about us?",
                                                 "contactanos"                           => "Contact Us",
                                                 "nuestros-clientes"                           => "Our Costumers",
@@ -124,6 +124,10 @@ if ( ! function_exists('element'))
                                                 "clientes-registrados"                  => "Registered Customers",
                                                 "continuar"                         => "Continue",
                                                 "login"                         => "Login",
+                                                "login-no-existe"                  => "The access data is not registered in the system",
+                                                "login-bloqueado"                  => "Sorry for the user you are trying to login with blocked",
+                                                "login-exito"                  => "Welcome to Sporthouse, you can continue browsing through the web!",
+                                                "login-error"                  => "Sorry, an error occurred while trying to login, please try again later",
                                                 "olvido-contrasena"                         => "Forget Your Password?",
                                                 "mostrar"                         => "Show",
                                                 "por-pagina"                         => "Per page",
@@ -144,6 +148,9 @@ if ( ! function_exists('element'))
                                                 "tus-productos"                  => "Your Products",
                                                 "como-comprar"                  => "How to buy",
                                                 "texto-como-comprar"                  => "We teach you how to buy",
+                                                "create-una-cuenta"                    => "Create an account",
+                                                "mi-carrito"                  => "View My Cart",
+                                                "texto-login"                  => "Please click to login session",
                                               );
 
                                                 
@@ -271,10 +278,11 @@ if ( ! function_exists('element'))
                                                 "clientes-registrados"                  => "Clientes Registrados",
                                                 "continuar"                  => "Continuar",
                                                 "login"                  => "Iniciar Sesión",
+                                                "texto-login"                  => "Por favor hacer clic para iniciar sesión",
                                                 "olvido-contrasena"                  => "¿Olvidaste tu contraseña?",
                                                 "login-no-existe"                  => "Los datos de acceso ingresados no se encuentran registrados en el sistema",
                                                 "login-bloqueado"                  => "Disculpa el usuario con el cual intentas ingresar se encuentra bloqueado",
-                                                "login-bloqueado"                  => "Bienvenido a Sporthouse, puede continuar navegando a traves de la web!",
+                                                "login-exito"                  => "Bienvenido a Sporthouse, puede continuar navegando a traves de la web!",
                                                 "login-error"                  => "Disculpe, Ocurrio un error al momento de intentar iniciar sesión, por favor intenta de nuevo mas tarde",
                                                 "mostrar"                  => "Mostrar",
                                                 "por-pagina"                  => "Por página",
@@ -295,6 +303,7 @@ if ( ! function_exists('element'))
                                                 "tus-productos"                  => "Tus Productos",
                                                 "como-comprar"                  => "Como Comprar",
                                                 "texto-como-comprar"                  => "Te enseñamos como comprar...",
+                                                "mi-carrito"                  => "Ver Mi Carrito de Compra",
                                                 );
 		
 		

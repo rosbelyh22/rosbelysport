@@ -129,17 +129,9 @@
                         <p>Aqui va algun texto</p>
                     </div>
                     <div class="cont span_2_of_c1">
-                        <div class="social">	
-                            <ul>	
-                                <li class="facebook"><a href="#"><span> </span></a><div class="radius"> <img src="<?= base_url() ?>images/radius.png"><a href="#"> </a></div><div class="border hide"><p class="num">1.51K</p></div></li>
-                            </ul>
-                        </div>
-                        <div class="social">	
-                            <ul>	
-                                <li class="twitter"><a href="#"><span> </span></a><div class="radius"> <img src="<?= base_url() ?>images/radius.png"></div><div class="border hide"><p class="num">1.51K</p></div></li>
-                            </ul>
-                        </div>
-                        <div class="social">	
+                        
+                        <?= get_basic_btnredes();?>  
+<!--                        <div class="social">	
                             <ul>	
                                 <li class="google"><a href="#"><span> </span></a><div class="radius"> <img src="<?= base_url() ?>images/radius.png"></div><div class="border hide"><p class="num">1.51K</p></div></li>
                             </ul>
@@ -148,12 +140,12 @@
                             <ul>	
                                 <li class="dot"><a href="#"><span> </span></a><div class="radius"> <img src="<?= base_url() ?>images/radius.png"></div><div class="border hide"><p class="num">1.51K</p></div></li>
                             </ul>
-                        </div>
+                        </div>-->
                         <div class="clear"> </div>
                     </div>
                     <div class="clear"></div>			
                 </div>
-               
+             
             </div>
             <?php echo get_publicidad_helper(0, array(0,1), 1)?>
             <div class="header-bottom">

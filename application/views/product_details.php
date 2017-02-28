@@ -283,8 +283,8 @@
                             <span ><?=get_lang("modelo")?>: <?=$pro[0]->modelo?></span> <br>
                             <span ><?=get_lang("marca")?>: <?=$pro[0]->marca?></span>
                             <div >
-                                <span class="actual"><?=get_lang("precio")?>: <?=$pro[0]->precio?> Bs</span> <br>
-                            <span class="actual"><?=get_lang("precio")?>: <?=$pro[0]->precio_dolares?> $</span>
+                                <span class="actual"><?=get_lang("precio")?>: <?=number_format($pro[0]->precio,2,",",".")?> Bs</span> <br>
+                            <span class="actual"><?=get_lang("precio")?>: <?=number_format($pro[0]->precio_dolares,2,",",".")?> Bs. $</span>
                             </div>
     <!--				<ul class="options">
                                     <h4 class="m_9">Select a Size</h4>
@@ -306,11 +306,13 @@
                            
 
                             <div class="social_single">	
-                                <ul>	
-                                       <li class="fb"><a href="#"><span> </span></a></li>
-                                       <li class="tw"><a href="#"><span> </span></a></li>
+                                <ul>
+                                    <?=GetBtnFacebook()?> <br>
+                                    <?=GetBtnTwitter()?>
+                                       
+<!--                                   <li class="tw"><a href="#"><span> </span></a></li>
                                        <li class="g_plus"><a href="#"><span> </span></a></li>
-                                       <li class="rss"><a href="#"><span> </span></a></li>		
+                                       <li class="rss"><a href="#"><span> </span></a></li>		-->
                                 </ul>
                             </div>
                             </div>
@@ -321,7 +323,7 @@
                                     <span ><?=get_lang("modelo")?>: <?=$pro[0]->modelo?></span> <br>
                                     <span ><?=get_lang("marca")?>: <?=$pro[0]->marca?></span><br>
 
-                                    <span class="actual"><?=get_lang("precio")?>: <?=number_format($pro[0]->precio,2,",",".")?> Bs.</span> <br>
+                                    <span class="actual"><?=get_lang("precio")?>: <?=number_format($pro[0]->precio,2,",",".")?> Bs.</span><br>
                                     <span class="actual"><?=get_lang("precio")?>: <?=number_format($pro[0]->precio_dolares,2,",",".")?> $</span>
                                     <?=$pro[0]->descripcion?>
                                 </p> <hr>

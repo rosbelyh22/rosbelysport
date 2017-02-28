@@ -8,7 +8,29 @@ class Carrito extends CI_Controller {
         $this->load->helper(array("contenido_helper", "contacto_helper", "slideshow_helper", "productos_helper", "menu_helper", "categoria"));
     }  
 	 
-	 
+    
+    public function index()
+	{
+            $productos_destacados = $this->productos_model->get_productos_destacados();
+                $obras = $this->obras_model->get_obras();
+		
+		if($this->session->userdata("idi") == ""){
+			$this->session->set_userdata("idi", "esp");
+			$this->session->set_userdata("idi_camp", '_espanol') ;	
+		}
+		
+		$this->session->set_userdata("menu_active", "home");
+		
+		$data = array("title" => "OMZ Construcciones",
+					  "conf" => $this->configuracion_model->get_conf(),
+					  //"slide" => $this->slideshow_model->get_slide(),
+					  "productos_destacados"	=> $productos_destacados,
+                                          "obras"   => $obras
+					  );
+	 $this->ObtenerCarrito($data);
+		
+	}
+    
     public function AgregarProducto($tags){
         $resp =  $this->carrito_model->AgregarProducto($tags);
         $conf = $this->configuracion_model->get_conf();
@@ -67,7 +89,8 @@ class Carrito extends CI_Controller {
                 <th>Nombre</th>
                 <th>Precio</th>
                 <th>Cantidad</th>
-                <th>Total</th>
+                <th>Total Bs</th>
+                <th>Total $</th>
                 <th>Acción</th>
             </tr>
             </thead>
@@ -77,10 +100,12 @@ class Carrito extends CI_Controller {
             $total = 0;
             $cantidadtotal =0;
             $nombretotal = '';
+            $totaldolares= 0;
           
             if(count($carrito) != 0){
             foreach($carrito as $c){
                 $total += ($c->precio*$c->cantidad);
+                $totaldolares += ($c->precio_dolares*$c->cantidad);
                 $cantidadtotal += $c->cantidad;
                 $preciounitario = $c->precio;
                 $nombre = "nombre".$this->session->userdata("idi_camp");
@@ -92,6 +117,7 @@ class Carrito extends CI_Controller {
                     <td align="left"><?=number_format($c->precio,2,",",".")?> Bs</td>
                     <td><input style='text-align: right; width: 100px;' onclick='this.select()' type='text' name='cantidad' id='cantidad_<?=$c->idproducto?>' class='form-control' value='<?=$c->cantidad?>' onchange="ActualizarCantidad(this.value, '<?=$c->idcarrito?>')"></td>
                     <td align="left"><?=number_format(($c->precio*$c->cantidad),2,",",".")?> Bs</td>
+                    <td align="left"><?=number_format(($c->precio_dolares*$c->cantidad),2,",",".")?> $</td>
                     <td align='center'>
                         <a href='javascript:;' onclick="EliminarCarrito('<?=$c->idcarrito?>')">
                             <i class="fa fa-trash-o" aria-hidden="true"></i>
@@ -110,66 +136,72 @@ class Carrito extends CI_Controller {
             }
             ?>
                 <tr>
-                    <td colspan='3' align='center'><b><?=get_lang("total")?></b></td>
-                    <td colspan='2' align='center'><b><?=number_format($total,2,",",".")?> Bs.</b></td>
+                    <td colspan='4' align='center'><b><?=get_lang("total")?></b></td>
+                    <td colspan='1' align='left'><b><?=number_format($total,2,",",".")?> Bs.</b></td>
+                    <td colspan='2' align='left'><b><?=number_format($totaldolares,2,",",".")?>$</b></td>
                     
                 </tr>
             </tbody>
         </table>
-           
+         
+         
+        <!--AQUI COMIENZA MERCADO PAGO--->
         <?php
-//        echo "---->".$cantidadtotal."<br>";
-//        echo "---->".$nombretotal."<br>";
-//        echo "---->".$total."<br>";
-        require_once('/../../lib/mercadopago/mercadopago.php');
-        //Id cliente y clave secreta
-        $mp = new MP("8893661173963621", "nviUDHBMNKWjLwoheeE5boZ05kNXXFf3");
-       
-        $preference_data = array(
-            "items" => array(
-                array(
-                    "title" => $nombretotal,
-                    "currency_id" => "VEF",
-//                    "category_id" => "Category",
-                    "quantity" => 1,
-                    "unit_price" => $total,
+        if(count($carrito) != 0){
+    //        echo "---->".$cantidadtotal."<br>";
+    //        echo "---->".$nombretotal."<br>";
+    //        echo "---->".$total."<br>";
+            require_once('/../../lib/mercadopago/mercadopago.php');
+            //Id cliente y clave secreta
+            $mp = new MP("8893661173963621", "nviUDHBMNKWjLwoheeE5boZ05kNXXFf3");
+
+            $preference_data = array(
+                "items" => array(
+                    array(
+                        "title" => $nombretotal,
+                        "currency_id" => "VEF",
+    //                    "category_id" => "Category",
+                        "quantity" => 1,
+                        "unit_price" => $total,
+                    )
                 )
-            )
-        );
+            );
 
-        $preference = $mp->create_preference($preference_data);
-        
-    ?> 
+            $preference = $mp->create_preference($preference_data);
 
-            <input id="carrito" type='hidden' value='<?php echo json_encode($carrito)?>'>
-            
-            <?php if($this->session->userdata("idcliente")) {
-             //Boton de Mercado Pago
-                echo '<a id="buttonMercadoPago1" href="'.$preference["response"]["init_point"].'" name="MP-Checkout" class="blue-m-Rn-ar-VeOn" > Mercado Pago </a>';
-            }else { ?>
-                
-                <h4 style="color:#df8a13;" class="m_text"><?=get_lang("completar-pago")?> <a href="<?=base_url()?>login"><?=get_lang("ingresa-aqui")?></a><h4>
-            <?php
-            }
-            ?>
-            
-            <br><a href="<?=base_url()?>home"><button class="grey"><?=get_lang("seguir-comprando")?></button> </a>
-            <script type="text/javascript" src="//resources.mlstatic.com/mptools/render.js"></script>
-            <script>
-                $(document).ready(function (e) {
-                    
+            ?> 
 
-                    $("#buttonMercadoPago1").click(function(){
-                        carrito = $("#carrito").val();
-                        console.log(carrito);
-                        $.post(base_url()+"pedido/agregarPedido",{"carrito": carrito }, function (data) {
-                //            ListaCarrito();
+                <input id="carrito" type='hidden' value='<?php echo json_encode($carrito)?>'>
+
+                <?php if($this->session->userdata("idcliente")) {
+                 //Boton de Mercado Pago
+                    echo '<div style="margin-left: 680px"><a id="buttonMercadoPago1" href="'.$preference["response"]["init_point"].'" name="MP-Checkout" class="blue-m-Rn-ar-VeOn" > Mercado Pago </a></div>';
+                }else { ?>
+
+                    <h4 style="color:#df8a13;" class="m_text"><?=get_lang("completar-pago")?> <a href="<?=base_url()?>login"><?=get_lang("ingresa-aqui")?></a><h4>
+                <?php
+                }
+                ?>
+
+                <br><a href="<?=base_url()?>home"><button class="grey"><?=get_lang("seguir-comprando")?></button> </a>
+                <script type="text/javascript" src="//resources.mlstatic.com/mptools/render.js"></script>
+                <script>
+                    $(document).ready(function (e) {
+
+
+                        $("#buttonMercadoPago1").click(function(){
+                            carrito = $("#carrito").val();
+                            console.log(carrito);
+                            $.post(base_url()+"pedido/agregarPedido",{"carrito": carrito }, function (data) {
+                    //            ListaCarrito();
+                            });
                         });
                     });
-                });
 
-            </script>
-        </div> 
+                </script>
+            </div> 
+        
+        <?php } ?>
        
        
     <?php

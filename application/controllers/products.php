@@ -26,7 +26,7 @@ class Products extends CI_Controller {
 					  "categorias_producto" => $categorias_producto,
 					  "productos" => $productos,
                                           "tags_cat" => $tags_cat,
-                                          //"obras" => $obras,
+                                          "obras" => $obras,
                                           "productos_destacados" => $productos_destacados);
 		$this->load->view('productos', $data);
 	}

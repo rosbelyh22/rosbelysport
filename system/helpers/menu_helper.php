@@ -30,7 +30,8 @@ if ( ! function_exists('element'))
                     <li><a href="<?=base_url()?>login"><?=get_lang("login")?></a></li>
                     <?php } ?>
                     
-                
+                    <a href="<?=base_url()?>carrito"> <i class="fa fa-cart-plus " aria-hidden="true" style=" font-size: 30px; color: #df8a13; " title="<?=get_lang("mi-carrito")?>"></i></a>
+
 <!--                    <ul class="icon2 sub-icon2 profile_img">
                         <li><a class="active-icon c2" href="#"> </a>
                             <ul class="sub-icon2 list">
@@ -75,7 +76,7 @@ if ( ! function_exists('element'))
                                         ?>
                                         </div>
                                     </div>
-                                    <img src="<?=base_url()?>images/nav_img2.jpg" alt=""/>
+<!--                                    <img src="<?=base_url()?>images/nav_img2.jpg" alt=""/>-->
                                 </div>
                             </div>
                         </li>    

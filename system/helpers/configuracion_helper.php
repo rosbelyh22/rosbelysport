@@ -97,37 +97,42 @@ if ( ! function_exists('element'))
 		$conf = get_conf_helper();
             if($conf["url_facebook"] != ''){
 				?>
-                <a href="<?=$conf["url_facebook"]?>" target="_blank"><i class="fa fa-facebook img-circle"></i></a>
+                <div class="social">	
+                    <ul>	
+                        <li class="facebook"><a href="<?=$conf["url_facebook"]?>" target="_blank"><span> </span></a><div class="radius"> <img src="<?= base_url() ?>images/radius.png"><a href="#"> </a></div><div class="border hide"><p class="num">1.51K</p></div></li>
+                    </ul>
+                </div>
 				<?php	
 			}
 			?>
             <?php
             if($conf["url_twitter"] != ''){
 				?>
-                <a href="<?=$conf["url_twitter"]?>" target="_blank"><i class="fa fa-twitter img-circle"></i></a>
+                <div class="social">	
+                            <ul>	
+                                <li class="twitter"><a href="<?=$conf["url_twitter"]?>" target="_blank"><span> </span></a><div class="radius"> <img src="<?= base_url() ?>images/radius.png"></div><div class="border hide"><p class="num">1.51K</p></div></li>
+                            </ul>
+                        </div>
+               
 				<?php	
 			}
 			?>
+           
             <?php
-            if($conf["url_instagram"] != ''){
-				?>
-				<a href="<?=$conf["url_instagram"]?>" target="_blank"><i class="fa fa-instagram img-circle"></i></a>
-				<?	
-			}
-			?>
-            <?
             if($conf["url_googleplus"] != ''){
 				?>
-                <a href="<?=$conf["url_googleplus"]?>" target="_blank"><i class="fa  fa-google-plus  img-circle"></i></a>
+                        <div class="social">	
+                            <ul>	
+                                <li class="google"><a href="<?=$conf["url_googleplus"]?>" target="_blank"><span> </span></a><div class="radius"> <img src="<?= base_url() ?>images/radius.png"></div><div class="border hide"><p class="num">1.51K</p></div></li>
+                            </ul>
+                        </div>
+              
 				<?php	
 			}
 			?>
-            <?php
-            if($conf["url_linkedin"] != ''){
-				?>
-                <a href="<?=$conf["url_linkedin"]?>" target="_blank"><i class="fa fa-linkedin img-circle"></i></a>
+            
 				<?php	
-			}
+			
 	}
 	
 	
@@ -178,6 +183,7 @@ if ( ! function_exists('element'))
 	
 	function GetBtnFacebook(){
 		?>
+<!--                <li class="fb"><a href="<?=current_url()?>"><span> </span></a></li>-->
 		<div class="fb-like" data-href="<?=current_url()?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
         
         <div id="fb-root"></div>
@@ -191,6 +197,16 @@ if ( ! function_exists('element'))
 		<?php
 	}
 	
+        function GetBtnTwitter(){ ?>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost/www/sporthouse/product_details" data-via="sporthouse">Tweet</a>
+            <script>
+                !function(d,s,id){
+                var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+                if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}
+                (document, 'script', 'twitter-wjs');
+            </script>
+    <?php    
+    }
         
         
         function GetContadorVisitas(){
@@ -285,7 +301,7 @@ if ( ! function_exists('element'))
        	 	</div>
              
        	 </div>       -->
-<div class="copy">
+<div class="copy ">
        	   <div class="wrap">
                 <div class="container">
                     <div class="cssmenu">

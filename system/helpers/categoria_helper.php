@@ -98,9 +98,9 @@ function list_tree_cat_id($id) {
         }
         echo "<ul>";    
             if($title){                                   
-                echo '<h4><a style="color:black" href="'.base_url().'shop?categoria='.$s->nombre.'" title='.$s->descripcion.' >'.$s->nombre.'</a></h4>';
+                echo '<h4><a style="color:black" href="'.base_url().'shop?categoria='.$s->nombre.'" title="'.$s->descripcion.'" >'.$s->nombre.'</a></h4>';
             } else {
-                echo '<li><a style="color:black" href="'.base_url().'shop?categoria='.$s->nombre.'" title='.$s->descripcion.' >'.$s->nombre.'</a></li>';
+                echo '<li><a style="color:black" href="'.base_url().'shop?categoria='.$s->nombre.'" title="'.$s->descripcion.'" >'.$s->nombre.'</a></li>';
             }
             list_tree_cat_id($s->id);
         echo "</ul>";

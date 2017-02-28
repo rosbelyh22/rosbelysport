@@ -13,7 +13,7 @@ class Home extends CI_Controller {
 	{
 		
 		$productos_destacados = $this->productos_model->get_productos_destacados();
-                //$obras = $this->obras_model->get_obras();
+                $obras = $this->obras_model->get_obras();
 		
 		if($this->session->userdata("idi") == ""){
 			$this->session->set_userdata("idi", "esp");
@@ -26,7 +26,7 @@ class Home extends CI_Controller {
 					  "conf" => $this->configuracion_model->get_conf(),
 					  "slide" => $this->slideshow_model->get_slide(),
 					  "productos_destacados"	=> $productos_destacados,
-                                          //"obras"   => $obras
+                                          "obras"   => $obras
 					  );
 		$this->load->view('home', $data);
 	}
@@ -36,7 +36,7 @@ class Home extends CI_Controller {
 	{
 		
 		$productos_destacados = $this->productos_model->get_productos_destacados();
-                //$obras = $this->obras_model->get_obras();
+                $obras = $this->obras_model->get_obras();
                 
 		if($idi == 'eng'){
 			$this->session->set_userdata("idi", "eng");
@@ -51,7 +51,7 @@ class Home extends CI_Controller {
 					  "conf" => $this->configuracion_model->get_conf(),
 					  "slide" => $this->slideshow_model->get_slide(),
 					  "productos_destacados"	=> $productos_destacados,
-                                          //"obras"   => $obras
+                                          "obras"   => $obras
 					  );
 		redirect(base_url()."home");
 	}

@@ -59,6 +59,7 @@ class Carrito_model extends CI_Model {
                 . "p.id as idproducto,"
                 . "p.precio,"
                 . "p.precio_dolares,"
+                . "p.codigo,"
                 . "c.cantidad,"
                 . "c.idcarrito,"
                 . "g.archivo as img_producto");

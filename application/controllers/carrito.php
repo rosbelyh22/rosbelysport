@@ -5,7 +5,7 @@ class Carrito extends CI_Controller {
 	public function __construct() {
         parent::__construct();
         $this->load->model(array("productos_model", "configuracion_model", "carrito_model", "email_model", "obras_model","categorias_model"));
-        $this->load->helper(array("contenido_helper", "contacto_helper", "slideshow_helper", "productos_helper", "menu_helper", "categoria"));
+        $this->load->helper(array("contenido_helper", "contacto_helper", "slideshow_helper", "productos_helper", "menu_helper", "categoria", "paypalform_helper"));
     }  
 	 
     
@@ -141,8 +141,7 @@ class Carrito extends CI_Controller {
                     <td colspan='2' align='left'><b><?=number_format($totaldolares,2,",",".")?>$</b></td>
                     
                 </tr>
-            </tbody>
-        </table>
+            
          
          
         <!--AQUI COMIENZA MERCADO PAGO--->
@@ -174,9 +173,20 @@ class Carrito extends CI_Controller {
                 <input id="carrito" type='hidden' value='<?php echo json_encode($carrito)?>'>
 
                 <?php if($this->session->userdata("idcliente")) {
-                 //Boton de Mercado Pago
-                    echo '<div style="margin-left: 680px"><a id="buttonMercadoPago1" href="'.$preference["response"]["init_point"].'" name="MP-Checkout" class="blue-m-Rn-ar-VeOn" > Mercado Pago </a></div>';
-                }else { ?>
+        ?>
+<!--                 //Boton de Mercado Pago
+                    echo '<div  class="col-lg-offset-6 col-sm-1"><a id="buttonMercadoPago1" href="'.$preference["response"]["init_point"].'" name="MP-Checkout" class="blue-m-Rn-ar-VeOn" > Mercado Pago </a></div>';
+                 //Boton de Paypal
+                    echo '<div class="col-sm-4">'.paypalform_helper($carrito).'</div>'; -->
+         <tr>
+                    <td colspan='4' align='center'><b></b></td>
+                    <td colspan='1' align='left'><b><div><a id="buttonMercadoPago1" href="<?php $preference["response"]["init_point"]?>" name="MP-Checkout" class="blue-m-Rn-ar-VeOn" > Mercado Pago </a></div></b></td>
+                    <td colspan='2' align='left'><b><?php paypalform_helper($carrito) ?></b></td>
+                    
+                </tr>         
+            </tbody>
+        </table>
+        <?php        }else { ?>
 
                     <h4 style="color:#df8a13;" class="m_text"><?=get_lang("completar-pago")?> <a href="<?=base_url()?>login"><?=get_lang("ingresa-aqui")?></a><h4>
                 <?php

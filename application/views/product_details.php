@@ -258,14 +258,13 @@
 				<!-- start product_slider -->
                         <ul id="etalage">
                             <li>
-                                    
-                                            <img class="etalage_thumb_image" src="<?=base_url()?>impanel/files/productos/<?=$pro[0]->img_producto?>" />
-                                            <img class="etalage_source_image" src="<?=base_url()?>impanel/files/productos/<?=$pro[0]->img_producto?>" />
+                                <img  class="etalage_thumb_image" src="<?=base_url()?>impanel/files/productos/<?=$pro[0]->img_producto?>" />
+<!--                            <img class="etalage_source_image" src="<?=base_url()?>impanel/files/productos/<?=$pro[0]->img_producto?>" />-->
                                     
                             </li>
                             <?php foreach ($galeria as $ga){?>
                                 <li>
-                                    <img class="etalage_thumb_image" src="<?=base_url()?>impanel/files/productos/<?=$ga->archivo?>" />
+<!--                                    <img class="etalage_thumb_image" src="<?=base_url()?>impanel/files/productos/<?=$ga->archivo?>" />-->
                                     <img class="etalage_source_image" src="<?=base_url()?>impanel/files/productos/<?=$ga->archivo?>" />
                                 </li>
                             <?php } ?>
@@ -278,13 +277,13 @@
                     <div style="float: left"  class="cont1 span_2_of_a1">
                         <div style=" text-align: left; ">
                             <div class="col-sm-6">
-                             <h3 class="m_3"><?=$pro[0]->nombre?></h3>
+                                <h3 class="m_3" style="color: #df8a13;"><?=$pro[0]->nombre?></h3> <hr>
                             <span ><?=get_lang("categoria")?>: <?=$pro[0]->nombre_categoria?></span> <br>
                             <span ><?=get_lang("modelo")?>: <?=$pro[0]->modelo?></span> <br>
                             <span ><?=get_lang("marca")?>: <?=$pro[0]->marca?></span>
                             <div >
-                                <span class="actual"><?=get_lang("precio")?>: <?=number_format($pro[0]->precio,2,",",".")?> Bs</span> <br>
-                            <span class="actual"><?=get_lang("precio")?>: <?=number_format($pro[0]->precio_dolares,2,",",".")?> Bs. $</span>
+                                <span class="actual"><?=get_lang("precio")?>: <?=number_format($pro[0]->precio,2,",",".")?> Bs.</span> <br>
+                            <span class="actual"><?=get_lang("precio")?>: <?=number_format($pro[0]->precio_dolares,2,",",".")?>  $</span>
                             </div>
     <!--				<ul class="options">
                                     <h4 class="m_9">Select a Size</h4>
@@ -294,7 +293,7 @@
                                     <li><a href="#">9</a></li>
                                     <div class="clear"></div>
                             </ul>-->
-    <p class="m_desc"><?=$pro[0]->descripcion_breve?></p><hr>
+                        <p class="m_desc"><?=$pro[0]->descripcion_breve?></p><hr>
                             <div class="btn_form">
                                <form action="<?=base_url()?>carrito/AgregarProducto/<?=$pro[0]->tags?>">
                                     <input type="submit" value="<?=get_lang("agregar-carrito")?>" title="">
@@ -317,34 +316,48 @@
                             </div>
                             </div>
                             <div class="col-sm-6">
-                                <h3 class="m_3"><?=get_lang("producto-detalle")?></h3>
+                                <h3 class="m_3" style="color: #df8a13;"><?=get_lang("producto-detalle")?></h3><hr>
                                 <p class="m_text">
-                                    <span ><?=get_lang("categoria")?>: <?=$pro[0]->nombre_categoria?></span> <br>
+<!--                                    <span ><?=get_lang("categoria")?>: <?=$pro[0]->nombre_categoria?></span> <br>
                                     <span ><?=get_lang("modelo")?>: <?=$pro[0]->modelo?></span> <br>
                                     <span ><?=get_lang("marca")?>: <?=$pro[0]->marca?></span><br>
 
                                     <span class="actual"><?=get_lang("precio")?>: <?=number_format($pro[0]->precio,2,",",".")?> Bs.</span><br>
-                                    <span class="actual"><?=get_lang("precio")?>: <?=number_format($pro[0]->precio_dolares,2,",",".")?> $</span>
-                                    <?=$pro[0]->descripcion?>
+                                    <span class="actual"><?=get_lang("precio")?>: <?=number_format($pro[0]->precio_dolares,2,",",".")?> $</span>-->
+                                    <?=$pro[0]->descripcion_breve?>
                                 </p> <hr>
                             </div>
                         </div>
-                    <div class="col-sm-12">    
-                        <h3 class="m_3"  style="margin-top: 30px"><?=get_lang("productos-similares")?></h3>
+                        <div class="col-sm-12" style=" margin-bottom: 20px">    
+                        <h3 class="m_3"  style="margin-top: 30px; color: #df8a13;">
+                                    <?=get_lang("productos-similares")?>
+                        </h3> <hr>
 
                         <ul id="flexiselDemo3" style="margin-top: 30px">
                             <?php foreach($productos_similares as $sp){ ?>
                             <a href="<?=base_url()?>product_details/get/<?=$sp->tags?>">
-                                <li>
-                                    <img src="<?=base_url()?>impanel/files/productos/<?=$sp->img_producto?>" />
+                                <li style="width: 230px; height: 200px">
+                                    <img src="<?=base_url()?>impanel/files/productos/<?=$sp->img_producto?>" style="width: 150px; height: 150px"  />
                                     <div class="grid-flex">
                                         <?=$sp->nombre?>
-                                        <p><?=$sp->precio?></p>
+                                        <!--<p><?=$sp->precio?></p>-->
                                     </div>
                                 </li>
                             </a>
                             <?php }?>
                         </ul>  
+                    </div>
+                        <div class="col-sm-6">
+                                <h3 class="m_3" style="color: #df8a13;"><?=get_lang("producto-detalle")?></h3><hr>
+                                <p class="m_text">
+<!--                                    <span ><?=get_lang("categoria")?>: <?=$pro[0]->nombre_categoria?></span> <br>
+                                    <span ><?=get_lang("modelo")?>: <?=$pro[0]->modelo?></span> <br>
+                                    <span ><?=get_lang("marca")?>: <?=$pro[0]->marca?></span><br>
+
+                                    <span class="actual"><?=get_lang("precio")?>: <?=number_format($pro[0]->precio,2,",",".")?> Bs.</span><br>
+                                    <span class="actual"><?=get_lang("precio")?>: <?=number_format($pro[0]->precio_dolares,2,",",".")?> $</span>-->
+                                    <?=$pro[0]->descripcion?>
+                                </p> <hr>
                     </div>
                     </div>
                     <div class="clear"></div>

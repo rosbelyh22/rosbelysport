@@ -123,15 +123,16 @@
         <?= GetMenu() ?>
         <?= GetSlideshowModif()?>
         <div class="main">
-            <div class="wrap">
-                <div class="content-top">
+<!--             <div class="wrap">
+                
+               <div class="content-top">
                     <div class="lsidebar span_1_of_c1">
                         <p>Aqui va algun texto</p>
                     </div>
                     <div class="cont span_2_of_c1">
                         
                         <?= get_basic_btnredes();?>  
-<!--                        <div class="social">	
+                        <div class="social">	
                             <ul>	
                                 <li class="google"><a href="#"><span> </span></a><div class="radius"> <img src="<?= base_url() ?>images/radius.png"></div><div class="border hide"><p class="num">1.51K</p></div></li>
                             </ul>
@@ -140,13 +141,14 @@
                             <ul>	
                                 <li class="dot"><a href="#"><span> </span></a><div class="radius"> <img src="<?= base_url() ?>images/radius.png"></div><div class="border hide"><p class="num">1.51K</p></div></li>
                             </ul>
-                        </div>-->
+                        </div>
                         <div class="clear"> </div>
                     </div>
                     <div class="clear"></div>			
                 </div>
              
-            </div>
+            </div>-->
+            
             <?php echo get_publicidad_helper(0, array(0,1), 1)?>
             <div class="header-bottom">
                 
@@ -159,23 +161,22 @@
         </div>
         <div class="wrap">
           <div class="col-sm-12" style="margin-bottom: 30px; text-align: center; margin-top: 30px " >
-              <h3 ><?= get_lang("nuestros-productos-destacados")?></h3><hr>
-                    <p class="m_text"><?= get_lang("hecha-un-vistazo-nuestros-productos")?><p>         
+              <h3  style="color: #df8a13; font-size: 25px" ><?= get_lang("nuestros-productos-destacados")?></h3><hr>
+              <h3 style="color: #000; font-size: 20px" ><?= get_lang("hecha-un-vistazo-nuestros-productos")?></h3>         
                 </div> 
        <?php GetProductosDestacados($productos_destacados)?>
         </div>
         <div class="header-bottom">
                 <div class="wrap">
                     <h3 style=" color: white; text-align: center; "><b><?=strtoupper(get_lang("conoce-sobre-nosotros"))?></b></h3>
-                    
                     <div class="clear"></div>
                 </div>
         </div>
         <div class="wrap">
             <div class="row" id="tf-about">
-                <div class="col-sm-4 slider-right" style="margin-bottom: 80px; text-align: center" >
-                    <h3><strong><?=get_lang("quienes-somos")?></strong></h3><hr>
-                        <p class="m_text"><?=  GetContenido("about-us", "", "span")?><p>         
+                <div class="col-sm-4" style="margin-bottom: 80px; text-align: left; margin-top: 30px" >
+                    <h3 style="color: #df8a13; font-size: 25px" ><strong><?=strtoupper(get_lang("quienes-somos"))?></strong></h3><hr>
+                        <p style="color: #000; font-size: 15px"><?=  GetContenido("about-us", "", "span")?><p>         
                 </div>
                 
                 <?php GetProductosDestacadosSlideshow($productos_destacados)?>

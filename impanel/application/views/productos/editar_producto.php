@@ -112,9 +112,10 @@
         
         
        
-        
+    <div class="col-sm-12">
     	<input type="submit" name="btn-edit-pro" id="btn-edit-pro" value="Guardar Producto" class="btn btn-success">
         <input type="button" name="btn-regresar" id="btn-regresar" value="Regresar" class="btn btn-warning" onClick="window.history.back()">
+    </div>
     </form>
 	
     </div>

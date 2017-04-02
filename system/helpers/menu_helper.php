@@ -17,7 +17,7 @@ if ( ! function_exists('element'))
             <div class="logo">
                 <a href="<?=base_url()?>home"><img style="height: 90px; width: 260px" src="<?=base_url()?>img/logo2_1.jpg" alt=""/></a>
 	    </div>
-            <div class="cssmenu" style="margin-top: 30px">
+            <div class="cssmenu" style="margin-top: 30px; font-size: 18px">
                 <ul>
 
                     <li><a href="<?=base_url()?>quienes_somos"><?=get_lang("quienes-somos")?></a></li>
@@ -57,33 +57,28 @@ if ( ! function_exists('element'))
    	<div class="wrap">
             <!-- start header menu -->
             <ul class="megamenu skyblue">
-                <li><a class="color" href="<?=base_url()?>home"><?=get_lang("inicio")?></a></li>
+                <li><a class="" href="<?=base_url()?>home"><?=get_lang("inicio")?></a></li>
 
                     <?php foreach($categorias as $c){
                         $color++;
                         $nombre = "nombre".$CI->session->userdata("idi_camp");
                     ?>
                         <li>
-                            <a class="color<?php echo $color?>" href="<?=base_url()?>shop?categoria=<?=$c->nombre?>">
+                            <a class="" href="<?=base_url()?>shop?categoria=<?=$c->nombre?>">
                                 <?=ucwords(strtolower($c->$nombre))?>
                             </a>
-                            <div class="megapanel">
-                                <div class="row">
-                                    <div class="col1" style="display: none">
-                                        <div class="h_nav">
+                            
                                         <?php
                                             list_tree_cat_id($c->id);
                                         ?>
-                                        </div>
-                                    </div>
-<!--                                    <img src="<?=base_url()?>images/nav_img2.jpg" alt=""/>-->
-                                </div>
-                            </div>
+                                        
+                                    
+                                
                         </li>    
 
                     <?php } ?>
                </ul>
-<!--            <div class="col-sm-12" style="margin-top: 5px; margin-bottom: 10px; " >
+<!--           <div class="col-sm-12" style="margin-top: 5px; margin-bottom: 10px; " >
                 <div class="input-group" style="width: 100%">
                     <input type="text" class="form-control" style="border-color:#df8a13;" placeholder="<?=get_lang("buscar")?>">
                     <span class="input-group-addon" style=" background-color: #df8a13; border-color:#df8a13"><i class="fa fa-search"  ></i>

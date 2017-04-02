@@ -79,7 +79,8 @@ if ( ! function_exists('element'))
                                                 "mensaje-footer"                        => "All logos used in this website are registered trademarks of each manufacturer, their use on this page is only to promote their products or to indicate the sale of them.",
                                                 "deseas-saber-nosotros"                 => "Want to know a little more about us?",
                                                 "contactanos"                           => "Contact Us",
-                                                "nuestros-clientes"                           => "Our Costumers",
+                                                "texto-contactanos"                     => "Comunicate with us",
+                                                "nuestros-clientes"                     => "Our Costumers",
                                                 "completa-formulario-y"                 => "Complete the form and",
                                                 "ademas-puedes-contactarnos"            => "You can also contact us by completing the form below",
                                                 "sin-productos-categoria"               => "Sorry, we currently have no products registered in this category",
@@ -151,6 +152,10 @@ if ( ! function_exists('element'))
                                                 "create-una-cuenta"                    => "Create an account",
                                                 "mi-carrito"                  => "View My Cart",
                                                 "texto-login"                  => "Please click to login session",
+                                                "no-robot"                  => "Prove you are not a robot!",
+                                                "nuestros-contactos"                  => "Our Contacts",
+                                                "registrate-sporthouse"                  => "Join Sporthouse!",
+                                                "no-hay-productos-categoria"                  => "Sorry, there are no products to list in this category...",
                                               );
 
                                                 
@@ -176,7 +181,7 @@ if ( ! function_exists('element'))
 						"direccion"				=> "Dirección",
 						"desarrollado-por"                      => "Desarrollado Por",
 						"nuestros-productos"                    => "Conoce Nuestros Productos",
-						"nuestros-productos-destacados"         => "Conoce Nuestros Productos mas Destacados",
+						"nuestros-productos-destacados"         => "Conoce Nuestros Productos Mas Destacados",
 						"hecha-un-vistazo-nuestros-productos"	=> "Hecha un vistazo a algunos de nuestros productos y ve lo mejor que tenemos para ti!",
 						"contenido"				=> "Contenido",
 						"sin-productos-destacados"              => "Sin productos destacados",
@@ -239,7 +244,7 @@ if ( ! function_exists('element'))
                                                 "contactanos"                           => "Contactanos",
                                                 "nuestros-clientes"                     => "Nuestros Clientes",
                                                 "completa-formulario-y"                 => "Completa el formulario y",
-                                                "ademas-puedes-contactarnos"            => "Ademas puedes contactarnos completando el siguiente formulario",
+                                                "ademas-puedes-contactarnos"            => "Ademas contactarnos completando el siguiente formulario",
                                                 "sin-productos-categoria"               => "Disculpa, en este momento no tenemos productos registrados en esta categoria",
                                                 "nuestras-categorias"                   => "Nuestras Categorias",
                                                 "registrate"                            => "Registrate",
@@ -258,6 +263,7 @@ if ( ! function_exists('element'))
                                                 "email-existe"                          => "Disculpe, este email ya existe",
                                                 "registro-error"                        => "Disculpe, su registro no se pudo completar, intente de nuevo",
                                                 "contactanos"                           => "Contactanos",
+                                                "texto-contactanos"                     => "Comunicate con nosotros",
                                                 "mensaje-exitoso"                       => "El mensaje fue enviado exitosamente",
                                                 "mensaje-error"                       => "Disculpe, su mensaje no pudo ser enviado, intente de nuevo mas tarde",
                                                 "error-nombre"                          => "Disculpe debe escribir un nombre",
@@ -304,6 +310,10 @@ if ( ! function_exists('element'))
                                                 "como-comprar"                  => "Como Comprar",
                                                 "texto-como-comprar"                  => "Te enseñamos como comprar...",
                                                 "mi-carrito"                  => "Ver Mi Carrito de Compra",
+                                                "no-robot"                  => "Prueba que no eres un robot!",
+                                                "nuestros-contactos"                  => "Nuestros Contactos",
+                                                "registrate-sporthouse"                  => "Registrate en Sporthouse!",
+                                                "no-hay-productos-categoria"                  => "Disculpe, no hay productos para esta categoria...",
                                                 );
 		
 		

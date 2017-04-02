@@ -43,8 +43,8 @@ if ( ! function_exists('element'))
                                 <img style=" height: 450px" src="<?= base_url() ?>impanel/files/slideshow/<?=$slide->archivo?>" alt=""/> 
                             </div>
                             <div class="slider-right">
-                                <h2><?=get_lang("tenemos")?></h2>
-                                <h3><?=get_lang("lo-mejor-para-ti")?></h3>
+                                <h2 ><?=get_lang("tenemos")?></h2>
+                                <h3  style="color: #df8a13" ><?=get_lang("lo-mejor-para-ti")?></h3>
                                 <p><?=get_lang("nuestros-productos")?></p>
 <!--                                <div class="btn"><a href="<?= base_url()?>shop"><?=get_lang("ver-mas")?></a></div>-->
                             </div>

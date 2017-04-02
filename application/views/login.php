@@ -119,39 +119,28 @@
     <?=GetMenu()?>
        <div class="login">
             <div class="wrap">
-                 
-                <div class="col_1_of_login span_1_of_login">
-                    <div id="msj_noexiste" class="alert alert-danger" style="display: none;" ><?=get_lang("login-no-existe")?></div>
-                    <div id="msj_bloqueado" class="alert alert-warning " style="display: none;" ><?=get_lang("login-bloqueado")?> </div>
-                    <div id="msj_exito" class="alert alert-success " style="display: none;" ><?=get_lang("login-exito")?> </div>
-                    <div id="msj_error" class="alert alert-danger " style="display: none;" ><?=get_lang("login-erro")?> </div>
-                    <h4 class="title"><?=get_lang("nuevos-clientes")?></h4> <hr>
-                        <h5 class="sub_title"><?=get_lang("create-una-cuenta")?></h5>
-                        <p> <?=  GetContenido("texto-registro-de-nuevos-clientes", "", "span")?></p>
-                        <div class="button1">
-                           <a href="<?=base_url()?>register"> <button class="grey"><?=get_lang("continuar")?></button></a>
-                         </div>
-                         <div class="clear"></div>
-                </div>
-                <div class="col_1_of_login span_1_of_login">
+                <div id="msj_noexiste" class="alert alert-danger" style="display: none;" ><?=get_lang("login-no-existe")?></div>
+                <div id="msj_bloqueado" class="alert alert-warning " style="display: none;" ><?=get_lang("login-bloqueado")?> </div>
+                <div id="msj_exito" class="alert alert-success " style="display: none;" ><?=get_lang("login-exito")?> </div>
+                <div id="msj_error" class="alert alert-danger " style="display: none;" ><?=get_lang("login-erro")?> </div>
+                <div class="col-sm-5">
                     <div class="login-title">
-                        <h4 class="title"><?=get_lang("clientes-registrados")?></h4>
+                        <h4 class="title" style="color: #df8a13"><?=get_lang("clientes-registrados")?></h4> <hr>
                         <div class="comments-area">
                             <form id="form-inicio" name="form-inicio" method="POST">
-                                    <p>
-                                            <label><?=get_lang("email")?></label>
-                                            <span>*</span>
-                                            <input type="text" value="" id="email" name="email">
-                                    </p>
-                                    <p>
+                                    
+                                            <span > <i class="fa fa-envelope" aria-hidden="true" style=" font-size: 20px; color:#df8a13;"></i></span>
+                                            <label style="margin-bottom: 10px"> <?=get_lang("email")?> </label>
+                                            <div style="margin-bottom: 10px"> <input type="text" value="" id="email" name="email"  style=" border-color: #df8a13"></div>
+                                    
+                                            <span> <i class="fa fa-unlock-alt" aria-hidden="true" style=" font-size: 20px; color:#df8a13;"></i></span>
                                             <label><?=get_lang("contrasena")?></label>
-                                            <span>*</span>
-                                            <input type="password" value="" id="clave" name="clave">
-                                    </p>
+                                            <div> <input type="password" value="" id="clave" name="clave"  style=" border-color: #df8a13"> </div>
+                                    
                                      
-                                     <div class="col-sm-6">
+                                     
                                             <button class="grey"><?=get_lang("login")?></button></a>
-                                    </div>
+                                    
                                     <div class="col-sm-6">
                                         <p>  <label><a href="#"><?=get_lang("olvido-contrasena")?></a></label></p>
                                      </div>
@@ -159,6 +148,22 @@
                         </div>
                     </div>
                 </div>
+                 
+                <div class="col-sm-4">
+                    <h4 class="title" style="color: #df8a13"><?=get_lang("nuevos-clientes")?></h4> <hr>
+<!--                        <h5 class="sub_title"><?=get_lang("create-una-cuenta")?></h5>-->
+                    <p> <?=  GetContenido("texto-registro-de-nuevos-clientes", "", "span")?></p>
+                   
+                        
+                        <div class="button1">
+                           <a href="<?=base_url()?>register"> <button class="grey"><?=get_lang("continuar")?></button></a>
+                         </div>
+                         <div class="clear"></div>
+                </div>
+                <div class="col-sm-3">
+                     <img style=" width:300px; text-align: center" src="<?=base_url()?>img/logo3.1.jpg">
+                </div>
+                
                 <div class="clear"></div>
             </div>
 	</div>

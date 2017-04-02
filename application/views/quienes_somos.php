@@ -119,23 +119,35 @@
     <?=GetMenu()?>
        <div class="login">
             <div class="wrap">
-                <div class="col_1_of_login span_1_of_login">
-                        <h4 class="title"><?=get_lang("quienes-somos")?></h4>
+                <div class="col-sm-5">
+                    <h4 class="title" style="color: #df8a13"><?=get_lang("quienes-somos")?></h4><hr>
 
                         <?=  GetContenido("about-us", "", "span")?>
 <!--                        <div class="button1">
                            <a href="register.html"><input type="submit" name="Submit" value="Continue"></a>
                          </div>-->
                          <div class="clear"></div>
+                
                 </div>
-                <div class="col_1_of_login span_1_of_login">
-                    <h4 class="title"><?=get_lang("quienes-somos")?></h4>
+                <div class="col-sm-4" style="border-color:#df8a13; border-style:  double; border-bottom-width: 10px">	
 
-                        <?=  GetContenido("about-us", "", "span")?>
-<!--                        <div class="button1">
-                           <a href="register.html"><input type="submit" name="Submit" value="Continue"></a>
-                         </div>-->
-                         <div class="clear"></div>
+                    <h4 class="title" style="color: #df8a13; margin-bottom: 20px" ><strong><?=get_lang("nuestros-contactos")?></strong></h4>
+                    <h1 style=" text-align: left">
+                        <i class="fa fa-phone" aria-hidden="true" style=" font-size: 20px; color:#df8a13;  margin-bottom: 20px"></i>
+                        <?=get_lang("telefono")?>: (2345)-9453453
+                    </h1>
+                    <h1 style=" text-align: left">
+                        <i class="fa fa-map-marker" aria-hidden="true" style=" font-size: 20px; color:#df8a13;  margin-bottom: 20px "></i>
+                        <?=get_lang("direccion")?>: Urb Lomas del Este, Avenida Rosarito, Torre Trebol
+                    </h1>
+                    <h1 style=" text-align: left">
+                        <i class="fa fa-envelope" aria-hidden="true" style=" font-size: 20px; color:#df8a13;  margin-bottom: 20px"></i>
+                        <?=get_lang("email")?>: <a href="mailto:sporthouse@gmail.com"> sporthouse@gmail.com </a>
+                    </h1>
+                              
+                </div>
+                <div class="col-sm-3">
+                     <img style=" width:300px; text-align: center" src="<?=base_url()?>img/logo3.1.jpg">
                 </div>
                 <div class="clear"></div>
             </div>

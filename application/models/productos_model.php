@@ -8,17 +8,17 @@ class Productos_model extends CI_Model {
 
     public function get_productos($idc = '', $idcol = '', $tags = '',$limitFrom = 0, $limitTo = 0, $idcate = 0) {
         $this->db->select("p.*,
-							g.archivo as img_producto,
-							c.nombre as nombre_categoria,
-							c.nombre_espanol as nombre_categoria_espanol,
-							c.tags as tags_categoria");
+                            g.archivo as img_producto,
+                            c.nombre as nombre_categoria,
+                            c.nombre_espanol as nombre_categoria_espanol,
+                            c.tags as tags_categoria");
         $this->db->from("im_productos p");
         $this->db->join("im_productos_categoria as c", "p.idcategoria = c.id", "INNER", FALSE);
         $this->db->join("im_productos_galeria g", "g.idproducto = p.id and principal = '1'", "INNER", FALSE);
         if ($limitFrom>0 && $limitTo>0) {
             $this->db->limit($limitTo, $limitFrom);
         }
-
+        $this->db->last_query();
         $where = array("p.status" => "0", "g.principal" => "1");
 
         if ($idc != '') {
@@ -54,11 +54,18 @@ class Productos_model extends CI_Model {
                     $idPadre = null;
                 }
             }
-            $products = $this->db->from("im_productos")->
-                    where_in('idcategoria',$categoriasHijos)->get();
+            $products = $this->db->from("im_productos as p")->
+                    where_in('p.idcategoria',$categoriasHijos);
+                     $this->db->join("im_productos_galeria g", "g.idproducto = p.id and principal = '1'", "LEFT", FALSE);
+                     $get = $this->db->get();
+                    return $get->result();
         } else {
-            $products = $this->db->from("im_productos")->where('idcategoria',$idCategoria)->get();
-        }
+            $products = $this->db->from("im_productos AS P")->where('P.idcategoria',$idCategoria);
+                        $this->db->join("im_productos_galeria g", "g.idproducto = p.id and principal = '1'", "LEFT", FALSE);
+                        $get = $this->db->get();
+        return $get->result();
+                        
+        }           
         return $products->result();
     }
     

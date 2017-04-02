@@ -127,13 +127,13 @@
                     <div class="col col-xs-12 rsidebar"> <a href="<?= base_url() ?>home"> Inicio</a>  
                         <?php
                         foreach ($categorias as $categoria) {
-                            echo "> <a href='http://adidas.pro/shop?categoria=" . $categoria . "'> " . $categoria . "</a> ";
+                            echo "> <a href='".base_url()."shop?categoria=" . $categoria . "'> " . $categoria . "</a> ";
                         }
                         ?>
                     </div>
                     <div class="hidden-xs rsidebar span_1_of_left">
                         <section  class="sky-form">
-                            <h4><?= get_lang("marca") ?></h4>
+                            <h4 style="  background-color: #000; border-color: #000; color: #df8a13"><?= get_lang("marca") ?></h4>
                             <div class="row row1 scroll-pane">
                                 <?php
                                 if (count($marcas) <= 0) {
@@ -141,11 +141,12 @@
                                 } else {
                                     foreach ($marcas as $marca) {
                                         ?>
-                                        <div class="col col-sm-12">
+                                        <div class="col col-sm-12" >
                                             <label class="checkbox">
                                                 <input type="checkbox" 
                                                        name="marca" 
-                                                       value="<?= $marca ?>">
+                                                       value="<?= $marca ?>"
+                                                       >
                                                 <i></i><?= $marca ?>
                                             </label>
                                         </div>
@@ -155,7 +156,7 @@
                             </div>
                         </section>
                         <section  class="sky-form">
-                            <h4><?= get_lang("modelo") ?></h4>
+                            <h4 style="  background-color: #000; border-color: #000; color: #df8a13"><?= get_lang("modelo") ?></h4>
                             <div class="row row1 scroll-pane">
                                 <?php
                                 if (count($modelos) <= 0) {
@@ -174,7 +175,7 @@
                             </div>
                         </section>
                         <section  class="sky-form">
-                            <h4><?= get_lang("anio") ?></h4>
+                            <h4 style=" background-color: #000; border-color: #000; color: #df8a13"><?= get_lang("anio") ?></h4>
                             <div class="row row1 scroll-pane">
                                 <?php
                                 if (count($anios) <= 0) {
@@ -191,10 +192,12 @@
 }
 ?>
                             </div>
-                        </section>
+                        
+                        </section>  
+                       
                     </div>
                     <div class="cont span_2_of_3">
-                        <div class="mens-toolbar">
+                        <div class="mens-toolbar" style=" background-color: #000; border-color: #000">
 <!--                            <div class="sort">
                                 <div class="sort-by">
                                     <label>Ordenar por</label>
@@ -206,35 +209,43 @@
                                     <a href=""><img src="<?= base_url() ?>images/arrow2.gif" alt="" class="v-middle"></a>
                                 </div>
                             </div>-->
-                            <div class="pager">   
-                                <div class="limiter visible-desktop">
-                                    <label><?= get_lang("mostrar") ?></label>
+                            <div class="pager" >   
+                                <div class="limiter visible-desktop" style="color: #df8a13 ;" >
+                                    <label style="color: #df8a13 ;"><?= get_lang("mostrar") ?></label>
                                     <select name="productosPorPagina" id="productosPorPagina" onchange="changePorPagina()">
-                                        <option value="2" selected="selected">2</option>
-                                        <option value="9" >9</option>
-                                        <option value="15">15</option>
-                                        <option value="30">30</option>
+                                        <option value="25" selected="selected">25</option>
+                                        <option value="50" >50</option>
+                                        <option value="75">75</option>
+                                        <option value="100">100</option>
                                     </select> <?= get_lang("por-pagina") ?>       
                                 </div>
-
-                                <ul class="dc_pagination dc_paginationA dc_paginationA06">
-                                    <em class="previous" id="pageNumbers" style="text-align: center"></em>
-                                </ul>
                                 <div></div>
                                 <div class="clear"></div>
                             </div>
+                               
                             <div class="clear"></div>
                         </div>
 
                         <div class="listadeproductos">
                             <div class="box1">
-                                cargando...
+                               
+                                <?= get_lang("no-hay-productos-categoria") ?>
+                                
                             </div>
                         </div>
+                        <div class="col-sm-12">
+                            <ul class="dc_pagination dc_paginationA dc_paginationA06">
+                                <hr>
+                                <em class="previous" id="pageNumbers" style="text-align: left"></em>
+                            </ul>
+                        </div>
                     </div>
+                     
                     <div class="clear"></div>
                 </div>
             </div>
+    <?php //echo json_encode($products)
+    ?>;
 <?= GetFooter() ?>
 
 
@@ -284,27 +295,29 @@
                 productsShow += '<h3 class="m_1">' + product.nombre + '</h3>';
                 productsShow += '<p class="m_2">' + product.codigo + '</p>';
                 productsShow += '<div class="grid_img">';
-                productsShow += '<div class="css3"><img src="' + base_url + 'impanel/files/productos/' + product.img_producto + '" alt=""/></div>';
+                productsShow += '<div class="css3"><img src="' + base_url + 'impanel/files/productos/'+product.archivo+'"/></div>';
                 productsShow += '<div class="mask1">';
                 productsShow += '<div class="info"><?= get_lang("ver-mas") ?></div>';
                 productsShow += '</div>';
                 productsShow += '</div>';
-                productsShow += '<div class="price">' + product.precio + '</div>';
+                productsShow += '<div class="price" style="color: #df8a13">' + product.precio + ' Bs</div>';
+                productsShow += '<div class="price" style="color: #df8a13">' + product.precio_dolares + '$</div>';
                 productsShow += '</div>';
                 productsShow += '</div>';
+                productsShow += '<a class="active-icon c1" href="'+base_url+ 'carrito/AgregarProducto/' + product.tags +'">';
                 productsShow += '<ul class="list2">';
                 productsShow += '<li>';
                 productsShow += '<img src="' + base_url + 'images/plus.png" alt=""/>';
                 productsShow += '<ul class="icon1 sub-icon1 profile_img">';
-                productsShow += '<li><a class="active-icon c1" href="#"><?= get_lang("agregar") ?> </a>';
+                productsShow += '<li><?= get_lang("agregar") ?>';
                 productsShow += '<ul class="sub-icon1 list">';
-                productsShow += '<li><h3>sed diam nonummy</h3><a href=""></a></li>';
-                productsShow += '<li><p>Lorem ipsum dolor sit amet, consectetuer  <a href="">adipiscing elit, sed diam</a></p></li>';
+                productsShow += '<li><p><?= get_lang("texto-agregar-carrito")?></p></li>';
                 productsShow += '</ul>';
                 productsShow += '</li>';
                 productsShow += '</ul>';
                 productsShow += '</li>';
                 productsShow += '</ul>    ';
+                productsShow += '</a>    ';
                 productsShow += '</div>    ';
                 return productsShow;
             }

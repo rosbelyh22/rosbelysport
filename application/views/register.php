@@ -102,14 +102,15 @@
 <!-- top scrolling -->
 <script type="text/javascript" src="<?=base_url()?>js/move-top.js"></script>
 <script type="text/javascript" src="<?=base_url()?>js/easing.js"></script>
-   <script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$(".scroll").click(function(event){		
-				event.preventDefault();
-				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
-			});
-		});
-	</script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+            $(".scroll").click(function(event){		
+                    event.preventDefault();
+                    $('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+            });
+    });
+</script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
 <!--    <div id="msj_exito"> </div> -->
@@ -131,16 +132,25 @@
                 <div id="clave-error" class="alert alert-danger " style="display: none;" ><?=get_lang("error-clave")?> </div>
                 <div id="pais-error" class="alert alert-danger " style="display: none;" ><?=get_lang("error-pais")?> </div>
                 <div id="direccion-error" class="alert alert-danger " style="display: none;" ><?=get_lang("error-direccion")?> </div>
-    	      <h4 class="title"><?=get_lang("create-una-cuenta")?></h4> 
+                
+                <h4 class="title" style="color: #df8a13"><?=get_lang("create-una-cuenta")?></h4> <hr>
     		   <form method="post" action="" name="form-agregar-cliente" id="form-agregar-cliente">
-    			 <div class="col_1_of_2 span_1_of_2">
-                            <div><input type="text" name="nombre" id="nombre" id placeholder="<?=get_lang("nombre-completo")?>"></div>
-                            <div><input type="text" name="estado" id="estado" placeholder="<?=get_lang("estado")?>" ></div>
-                            <div><input type="text" name="email" id="email" placeholder="<?=get_lang("email")?>"></div>
-                            <div><input type="password" name="clave" id="clave" placeholder="<?=get_lang("contrasena")?>"></div>
-		    	 </div>
-		    	  <div class="col_1_of_2 span_1_of_2">	
-		    		<div><select id="country" name="pais" >
+    			 <div class="col-sm-4">
+                            <label> <?=get_lang("nombre-completo")?> </label>
+                            <div><input type="text" name="nombre" id="nombre"  style=" border-color: #df8a13;"></div>
+                             <label> <?=get_lang("estado")?> </label>
+                            <div><input type="text" name="estado" id="estado"  style=" border-color: #df8a13;" ></div>
+                             <label> <?=get_lang("email")?> </label>
+                            <div><input type="text" name="email" id="email"  style=" border-color: #df8a13;"></div>
+                            <label> <?=get_lang("contrasena")?> </label>
+                            <div><input type="password" name="clave" id="clave"  style=" border-color: #df8a13;"></div>
+		    	
+                        <button class="grey"><?=get_lang("registrar")?></button> 
+                        <p class="terms"><?=get_lang("terminos-condiciones")?>.</p>    
+                        </div>
+		    	  <div class="col-sm-4">	
+                              <label> <?=get_lang("seleccione-pais")?> </label>
+		    		<div><select id="country" name="pais" style=" border-color: #df8a13;" >
                                     <option value="ninguno"><?=get_lang("seleccione-pais")?></option>         
                                     <option value="AX">Åland Islands</option>
                                     <option value="AF">Afghanistan</option>
@@ -337,22 +347,47 @@
                                     <option value="SA">Saudi Arabia</option>
                                     <option value="SN">Senegal</option>
                                     <option value="VLA">Venezuela</option>
-		         </select>
-                        <input type="text" name="direccion" id="direccion" placeholder="<?=get_lang("direccion")?>" ></div>
-                        <input type="text" name="codigo" id="codigo" class="code" placeholder="<?=get_lang("codigo")?>"> - <input type="text" name="numero" id="numero" class="number"placeholder="<?=get_lang("numero")?>">
+                                    </select> </div>
+                            <label> <?=get_lang("direccion")?></label>
+                            <div><input type="text" name="direccion" id="direccion"  style=" border-color: #df8a13;" ></div>
+                             <label> <?=get_lang("numero")?></label>
+                            <div><input type="text" name="codigo" id="codigo" class="code" style=" border-color: #df8a13;"> - 
+                                <input type="text" name="numero" id="numero" class="number" style=" border-color: #df8a13;">
+                            </div>
+                            <label><?=get_lang("no-robot")?>  </label>
+                            <div class="g-recaptcha" data-sitekey="6LdwAxsUAAAAAB1Kg3ajighgH0OL2HdqniO1deYe"></div>
                         </div>
-                             
-		    				        
-                       <div class="col-sm-12" id="registrar" >
-                            <button class="grey"><?=get_lang("registrar")?></button>
-                            <p class="terms"><?=get_lang("terminos-condiciones")?>.</p>      
-                                
-		        </div>
+                       <div class="col-sm-4">
+                       </div>
+		    </form>				        
+                        <div class="col-sm-4" style="border-color:#df8a13; border-style:  double; border-bottom-width: 10px; ">	
+
+                            <h4 class="title" style="color: #df8a13; margin-bottom: 20px" ><strong><?=get_lang("registrate-sporthouse")?></strong></h4>
+                            
+                            <h1 style=" text-align: left">
+                                <i class="fa fa-hand-o-up" aria-hidden="true" style=" font-size: 20px; color:#df8a13;  margin-bottom: 20px"></i>
+                                Navega a través de nuestra web
+                            </h1>
+                            <h1 style=" text-align: left">
+                                <i class="fa fa-eye" aria-hidden="true" style=" font-size: 20px; color:#df8a13;  margin-bottom: 20px"></i>
+                                Observa todo lo que tenemos para ti
+                            </h1>
+                            <h1 style=" text-align: left">
+                                <i class="fa fa-shopping-cart" aria-hidden="true" style=" font-size: 20px; color:#df8a13;  margin-bottom: 20px"></i>
+                                Añade Productos a tu Carrito
+                            </h1>
+                            <h1 style=" text-align: left">
+                                <i class="fa fa-credit-card" aria-hidden="true" style=" font-size: 20px; color:#df8a13;  margin-bottom: 20px "></i>
+                                 Escoge la opcion de pago de tu preferencia! 
+                            </h1>
+                            
+                              
+                        </div><br>
 		        
                       
 		         <div class="clear"></div>
                        
-		    </form>
+		    
                     <div class="col-sm-12" id="iniciarsesion" style="display: none;">
                         <a href="<?=base_url()?>login">
                             <button class="grey"><?=get_lang("login")?></button>

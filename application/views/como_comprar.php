@@ -119,23 +119,40 @@
     <?=GetMenu()?>
        <div class="login">
             <div class="wrap">
-                <div class="col_1_of_login span_1_of_login">
-                        <h4 class="title"><?=get_lang("texto-como-comprar")?></h4>
+                <div class="col-sm-6">
+                    <h4 class="title" style="color: #df8a13" ><?=get_lang("texto-como-comprar")?></h4> <hr> 
                         <?=  GetContenido("how-to-buy", "", "span")?>
 <!--                        <div class="button1">
                            <a href="register.html"><input type="submit" name="Submit" value="Continue"></a>
                          </div>-->
                          <div class="clear"></div>
+                    <img style="height: 100px; width: 150px;" src="<?=base_url()?>img/comprar2.png" alt=""/>
                 </div>
-                <div class="col_1_of_login span_1_of_login" style="text-align: center">
-<!--                    <h4 class="title"><?=get_lang("quienes-somos")?></h4>
+                <div class="col-sm-4" style="border-color:#df8a13; border-style:  double; border-bottom-width: 10px; ">	
 
-                        <?=  GetContenido("about-us", "", "span")?>
-                        <div class="button1">
-                           <a href="register.html"><input type="submit" name="Submit" value="Continue"></a>
-                         </div>-->
-                    <img style="height: 200px; width: 200px;" src="<?=base_url()?>img/comprar2.png" alt=""/>
-                         <div class="clear"></div>
+                            <h4 class="title" style="color: #df8a13; margin-bottom: 20px" ><strong><?=get_lang("registrate-sporthouse")?></strong></h4>
+                            
+                            <h1 style=" text-align: left">
+                                <i class="fa fa-hand-o-up" aria-hidden="true" style=" font-size: 20px; color:#df8a13;  margin-bottom: 20px"></i>
+                                Navega a través de nuestra web
+                            </h1>
+                            <h1 style=" text-align: left">
+                                <i class="fa fa-eye" aria-hidden="true" style=" font-size: 20px; color:#df8a13;  margin-bottom: 20px"></i>
+                                Observa todo lo que tenemos para ti
+                            </h1>
+                            <h1 style=" text-align: left">
+                                <i class="fa fa-shopping-cart" aria-hidden="true" style=" font-size: 20px; color:#df8a13;  margin-bottom: 20px"></i>
+                                Añade Productos a tu Carrito
+                            </h1>
+                            <h1 style=" text-align: left">
+                                <i class="fa fa-credit-card" aria-hidden="true" style=" font-size: 20px; color:#df8a13;  margin-bottom: 20px "></i>
+                                 Escoge la opcion de pago de tu preferencia! 
+                            </h1>
+                            
+                              
+                        </div>
+                 <div class="col-sm-2">
+                     <img style=" width:300px; text-align: center" src="<?=base_url()?>img/logo3.1.jpg">
                 </div>
                 <div class="clear"></div>
             </div>

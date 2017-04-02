@@ -184,7 +184,7 @@ class Productos_model extends CI_Model {
 						"modelo" => $this->input->post("modelo"),
 						"marca" => $this->input->post("marca"),
 						"talla" => $this->input->post("talla"),
-						"pecio_dolares" => $this->input->post("pecio_dolares"),
+						"precio_dolares" => $this->input->post("precio_dolares"),
 						"anio" => $this->input->post("anio"));
 		
 						

@@ -21,13 +21,14 @@ if ( ! function_exists('element'))
 	function GetBtnRedes(){
 		$conf = get_conf_helper();
 		?>
-		<ul class="social-share pull-right">
+        
+		<ul class="social-share "  >
         	<?php
             if($conf["url_facebook"] != ''){
 				?>
 				<li>
                 <a href="<?=$conf["url_facebook"]?>" target="_blank">
-                	<span class="icon-facebook"></span>
+                    <span class="fa fa-facebook-square" style="color: #df8a13; font-size: 30px"></span>
                 </a>
                 </li>
 				<?php	
@@ -38,7 +39,7 @@ if ( ! function_exists('element'))
 				?>
 				<li>
                 <a href="<?=$conf["url_twitter"]?>" target="_blank">
-                	<span class="icon-twitter"></span>
+                	<span class="fa fa-twitter-square" style="color: #df8a13; font-size: 30px"></span>
                 </a>
                 </li>
 				<?php	
@@ -49,7 +50,7 @@ if ( ! function_exists('element'))
 				?>
 				<li>
                 <a href="<?=$conf["url_instagram"]?>" target="_blank">
-                	<span class="icon-instagram"></span>
+                	<span class="fa fa-instagram" style="color: #df8a13; font-size: 30px"></span>
                 </a>
                 </li>
 				<?php	
@@ -60,7 +61,7 @@ if ( ! function_exists('element'))
 				?>
 				<li>
                 <a href="<?=$conf["url_googleplus"]?>" target="_blank">
-                	<span class="icon-google-plus"></span>
+                	<span class="fa fa-google-plus-square"  style="color: #df8a13; font-size: 30px"></span>
                 </a>
                 </li>
 				<?php	
@@ -71,7 +72,7 @@ if ( ! function_exists('element'))
 				?>
 				<li>
                 <a href="<?=$conf["url_linkedin"]?>" target="_blank">
-                <span class="icon-linkedin"></span>
+                <span class="fa fa-linkedin-square" style="color: #df8a13; font-size: 30px"></span>
                 </a>
                 </li>
 				<?php	
@@ -82,13 +83,14 @@ if ( ! function_exists('element'))
 				?>
 				<li>
                 <a href="<?=$conf["url_pinteres"]?>" target="_blank">
-                <span class="icon-pinterest"></span>
+                <span class="fa fa-pinterest-square" style="color: #df8a13; font-size: 30px" ></span>
                 </a>
                 </li>
 				<?php	
 			}
 			?>
           </ul>
+        
 		<?php
 	}
 	
@@ -97,7 +99,7 @@ if ( ! function_exists('element'))
 		$conf = get_conf_helper();
             if($conf["url_facebook"] != ''){
 				?>
-                <div class="social">	
+                <div class="social" title="Facebook">	
                     <ul>	
                         <li class="facebook"><a href="<?=$conf["url_facebook"]?>" target="_blank"><span> </span></a><div class="radius"> <img src="<?= base_url() ?>images/radius.png"><a href="#"> </a></div><div class="border hide"><p class="num">1.51K</p></div></li>
                     </ul>
@@ -108,7 +110,7 @@ if ( ! function_exists('element'))
             <?php
             if($conf["url_twitter"] != ''){
 				?>
-                <div class="social">	
+                <div class="social" title="twitter">	
                             <ul>	
                                 <li class="twitter"><a href="<?=$conf["url_twitter"]?>" target="_blank"><span> </span></a><div class="radius"> <img src="<?= base_url() ?>images/radius.png"></div><div class="border hide"><p class="num">1.51K</p></div></li>
                             </ul>
@@ -304,23 +306,33 @@ if ( ! function_exists('element'))
 <div class="copy ">
        	   <div class="wrap">
                 <div class="container">
-                    <div class="cssmenu">
+                    <div class="cssmenu" style=" font-size: 16.8px;">
                         <p>
                             
                         
-                            <a style="color:#FFF;" href="<?=base_url()?>home"><?=get_lang("quienes-somos")?></a> | 
-                            <a style="color:#FFF;" href="<?=base_url()?>home#tf-about"><?=get_lang("registrate")?></a> | 
+                            <a style="color:#df8a13;" href="<?=base_url()?>home"><?=get_lang("quienes-somos")?></a> | 
+                            <a style="color:#df8a13;" href="<?=base_url()?>home#tf-about"><?=get_lang("registrate")?></a> | 
 <!--                            <a style="color:#FFF;" href="<?=base_url()?>content/get/services"><?=get_lang("tienda")?></a> | -->
-                            <a style="color:#FFF;" href="<?=base_url()?>obras/get"><?=get_lang("mi-cuenta")?></a> | 
+                            <a style="color:#df8a13;" href="<?=base_url()?>obras/get"><?=get_lang("mi-cuenta")?></a> | 
 <!--                            <a style="color:#FFF;" href="<?=base_url()?>carrito/obtenerCarrito"><?=get_lang("checkOut")?></a> | -->
-                            <a style="color:#FFF;" href="<?=base_url()?>contact"><?=get_lang("contactanos")?></a> | 
-                            <a style="color:#FFF;" href="<?=base_url()?>home/lang/esp"><?=get_lang("spanish")?></a> | 
-                            <a style="color:#FFF;" href="<?=base_url()?>home/lang/eng"><?=get_lang("english")?></a>
+                            <a style="color:#df8a13;" href="<?=base_url()?>contact"><?=get_lang("contactanos")?></a> | 
+                            <a style="color:#df8a13;" href="<?=base_url()?>home/lang/esp"><?=get_lang("spanish")?></a> | 
+                            <a style="color:#df8a13;" href="<?=base_url()?>home/lang/eng"><?=get_lang("english")?></a>
                             
 
                         </p>
-                        <p><?=$conf["copyright"]?> <br> <?=get_lang("mensaje-footer")?> <br>
-                        Desarrollado por <a href="http://www.jysolutions.com.ve" target="_blank" style="color:#FFDF10 !important">J&Y Solutions</a></p>
+                        <p><?=$conf["copyright"]?></p>
+                        <p><?=get_lang("mensaje-footer")?> </p>
+                        <p> <i class="fa fa-phone" aria-hidden="true" style=" font-size: 20px; color:#df8a13;"></i>
+                        <?=get_lang("telefono")?>: (2345)-9453453 | 
+                        
+                        <i class="fa fa-map-marker" aria-hidden="true" style=" font-size: 20px; color:#df8a13;"></i>
+                        <?=get_lang("direccion")?>: Urb Lomas del Este, Avenida Rosarito, Torre Trebol | 
+                        <i class="fa fa-envelope" aria-hidden="true" style=" font-size: 20px; color:#df8a13;"></i>
+                        <?=get_lang("email")?>: <a href="mailto:sporthouse@gmail.com"> sporthouse@gmail.com </a> </p>
+                        <p>Desarrollado por <a href="http://www.jysolutions.com.ve" target="_blank" style="color:#FFDF10 !important">J&Y Solutions</a> 
+                        | <?=GetBtnRedes()?>
+                        </p>
                     </div>
                     
                 </div>
@@ -494,8 +506,8 @@ if ( ! function_exists('element'))
                     <a href="<?=base_url()?>product_details/get/<?=$pd->tags?>">
                         <div class="view view-fifth">
                             <div class="top_box">
-                                <h3 class="m_1"><?=$pd->$nombre?></h3>
-                                <p class="m_2"><?=$pd->$descripcion_breve?></p>
+                                <h2 style="color:#df8a13; font-size: 18px"><?=$pd->$nombre?></h2>
+                                <h2 style="color: #000; font-size: 15px"><?=$pd->$descripcion_breve?></h2>
                                 <div class="grid_img">
                                     <div class="css3">
                                         <img style="height: 200px" src="<?=base_url()?>impanel/files/productos/<?=$pd->img_producto?>" alt="<?=$pd->$nombre?>"/>
@@ -508,19 +520,21 @@ if ( ! function_exists('element'))
                                 <div class="price"><?=number_format($pd->precio_dolares,2,",",".")?> $</div>
                             </div>
                         </div>
-                        <ul class="list">
-                            <li>
-                                <img  src="<?= base_url() ?>images/plus.png" alt=""/>
-                                <ul class="icon1 sub-icon1 profile_img">
-                                    <li><a class="active-icon c1" href="<?=base_url()?>carrito/AgregarProducto/<?=$pd->tags?>"><?=get_lang("agregar")?> </a>
-                                        <ul class="sub-icon1 list">
-                                            <li><h3><?=get_lang("agregar-carrito")?></h3></li>
-                                            <li><p><?= get_lang("texto-agregar-carrito")?></p></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <a class="active-icon c1" href="<?=base_url()?>carrito/AgregarProducto/<?=$pd->tags?>">
+                            <ul class="list">
+                                <li>
+                                    <img  src="<?= base_url() ?>images/plus.png" alt=""/>
+                                    <ul class="icon1 sub-icon1 profile_img">
+                                        <li><?=get_lang("agregar")?> 
+                                            <ul class="sub-icon1 list">
+                                                <li><h3><?=get_lang("agregar-carrito")?></h3></li>
+                                                <li><p><?= get_lang("texto-agregar-carrito")?></p></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </a>
                         <div class="clear"></div>
                     
                     </div>
@@ -558,7 +572,14 @@ if ( ! function_exists('element'))
            ?> 
                  
                
-			<a href="<?=base_url()?>product_details/get/<?=$pd->tags?>"><li><img src="<?=base_url()?>impanel/files/productos/<?=$pd->img_producto?>" /><div class="grid-flex"><?=$pd->$nombre?><p><?=$pd->$nombre_categoria?></p></div></li></a>
+			<a href="<?=base_url()?>product_details/get/<?=$pd->tags?>">
+                            <li style="width: 230px; height: 200px">
+                                <img src="<?=base_url()?>impanel/files/productos/<?=$pd->img_producto?>" style="width: 150px; height: 150px" />
+                                <div class="grid-flex"><?=$pd->$nombre?>
+                                    <p><?=$pd->$nombre_categoria?></p>
+                                </div>
+                            </li>
+                        </a>
 <!--			<li><img src="<?=base_url()?>images/pic10.jpg" /><div class="grid-flex"><a href="#">Capzio</a><p>Rs 850</p></div></li>
 			<li><img src="<?=base_url()?>images/pic9.jpg" /><div class="grid-flex"><a href="#">Zumba</a><p>Rs 850</p></div></li>
 			<li><img src="<?=base_url()?>images/pic8.jpg" /><div class="grid-flex"><a href="#">Bloch</a><p>Rs 850</p></div></li>

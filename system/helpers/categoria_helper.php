@@ -91,9 +91,15 @@ function list_tree_cat_id($id) {
         // foreach para ver si es un una categoria de segundo nivel y ponerle el hr o lo q sea
         foreach (get_second_level_categories() as $categorySecondLevel){
             if($s->id == $categorySecondLevel->id){
-                $title = true;
+                $title = true; ?>
+                <div class="megapanel">
+                    <div class="row">
+                        <div class="" style="display: none">
+                            <div class="h_nav ">
+                
+                <?php
                 echo "</div></div>";
-                echo '<div class="col1"><div class="h_nav">';
+                echo '<div class="col-sm-4"><div class="h_nav">';
            }
         }
         echo "<ul>";    
@@ -104,7 +110,13 @@ function list_tree_cat_id($id) {
             }
             list_tree_cat_id($s->id);
         echo "</ul>";
-            
+        echo "</div>";
+        echo "</div>"; 
+        ?>                         
+        <img style=" width: 200px" src="<?=base_url()?>impanel/files/categoria_producto/<?=$s->imagen?>" alt=""/>
+        </div>
+        </div>
+        <?php    
         }
 
     } else {

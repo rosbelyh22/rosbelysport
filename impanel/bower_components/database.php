@@ -48,23 +48,11 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-//Servidor//
-
-//$db['default']['hostname'] = 'Sistematico.com.ve';
-//$db['default']['username'] = 'sistemat_sportho';
-//$db['default']['password'] = '.*/ClaveBD.*/';
-//$db['default']['database'] = 'sistemat_sporthouse';
-
-//Local//
-
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
 $db['default']['password'] = '';
 $db['default']['database'] = 'sporthouse';
- 
-
-
-$db['default']['dbdriver'] = 'mysqli';
+$db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;

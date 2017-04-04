@@ -133,6 +133,7 @@
                 <div id="clave-error" class="alert alert-danger " style="display: none;" ><?=get_lang("error-clave")?> </div>
                 <div id="pais-error" class="alert alert-danger " style="display: none;" ><?=get_lang("error-pais")?> </div>
                 <div id="direccion-error" class="alert alert-danger " style="display: none;" ><?=get_lang("error-direccion")?> </div>
+                <div id="recaptcha" class="alert alert-danger " style="display: none;" ><?=get_lang("recaptcha")?> </div>
                 
                 <h4 class="title" style="color: #df8a13" ><strong><?=get_lang("texto-contactanos")?></strong></h4>
                 <hr> 
@@ -163,7 +164,7 @@
                             <label> <?=get_lang("email")?> </label>
                             <div><input type="text" name="email" id="email"  style=" border-color: #df8a13" ></div>
                             <label><?=get_lang("no-robot")?>  </label>
-                            <div class="g-recaptcha" data-sitekey="6LdwAxsUAAAAAB1Kg3ajighgH0OL2HdqniO1deYe"></div>
+                            <div id="recaptcha" class="g-recaptcha" data-sitekey="6LdwAxsUAAAAAB1Kg3ajighgH0OL2HdqniO1deYe"></div>
                               
                         </div>
                 </form> 

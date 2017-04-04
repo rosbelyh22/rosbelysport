@@ -257,11 +257,11 @@
                     <div class="labout span_1_of_a2">
 				<!-- start product_slider -->
                         <ul id="etalage">
-                            <li>
+<!--                            <li>
                                 <img  class="etalage_thumb_image" src="<?=base_url()?>impanel/files/productos/<?=$pro[0]->img_producto?>" />
-<!--                            <img class="etalage_source_image" src="<?=base_url()?>impanel/files/productos/<?=$pro[0]->img_producto?>" />-->
+                            <img class="etalage_source_image" src="<?=base_url()?>impanel/files/productos/<?=$pro[0]->img_producto?>" />
                                     
-                            </li>
+                            </li>-->
                             <?php foreach ($galeria as $ga){?>
                                 <li>
 <!--                                    <img class="etalage_thumb_image" src="<?=base_url()?>impanel/files/productos/<?=$ga->archivo?>" />-->

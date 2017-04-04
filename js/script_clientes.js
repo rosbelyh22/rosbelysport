@@ -13,6 +13,7 @@ $(document).ready(function (e) {
         var clave = $("#clave").val();
         var pais = $("#country").val();
         var direccion = $("#direccion").val();
+        var recaptcha = $("#recaptcha").val();
         
         if(nombre == ''){
             $("#nombre-error").fadeIn(3000);
@@ -52,6 +53,10 @@ $(document).ready(function (e) {
             $("#clave-error").fadeIn(3000);
             $("#clave-error").fadeOut(3000);
         }
+        else if(recaptcha == ''){
+            $("#recaptcha").fadeIn(3000);
+            $("#recaptcha").fadeOut(3000);
+        }
         
         else {
             $.post("index.php/register/agregarCliente", $(this).serialize(), function (data) {
@@ -82,6 +87,7 @@ $(document).ready(function (e) {
         var codigo = $("#codigo").val();
         var numero = $("#numero").val();
         var rifcedula = $("#rif-cedula").val();
+        var recaptcha = $("#recaptcha").val();
         
         if(nombre == ''){
             $("#nombre-error").fadeIn(3000);
@@ -105,6 +111,10 @@ $(document).ready(function (e) {
         else if(rifcedula == ''){
             $("#rifcedula-error").fadeIn(3000);
             $("#rifcedula-error").fadeOut(3000);
+        }
+        else if(recaptcha == ''){
+            $("#recaptcha").fadeIn(3000);
+            $("#recaptcha").fadeOut(3000);
         }
         else {
             $.post("index.php/contactanos/mensajeContacto", $(this).serialize(), function (data) {

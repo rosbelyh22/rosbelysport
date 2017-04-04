@@ -102,14 +102,14 @@ if ( ! function_exists('element'))
                                                 "seleccione-pais"                       => "Select a Country",
                                                 "codigo"                                => "Code",
                                                 "numero"                                => "Number",
-                                                "registro-exitoso"                     => "Congratulations, your registration at Sporthouse has been successful!",
+                                                "registro-exitoso"                      => "Congratulations, your registration at Sporthouse has been successful!",
                                                 "email-existe"                          => "Sorry, this email already exists",
                                                 "registro-error"                        => "Sorry, your registration could not be completed, try again!",
                                                 "mensaje-exitoso"                        => "The message was successfully sent!",
-                                                "mensaje-error"                        => "Sorry, your message could not be sent, please try again later",
-                                                "comprar-ahora"                        => "Buy now",
+                                                "mensaje-error"                         => "Sorry, your message could not be sent, please try again later",
+                                                "comprar-ahora"                         => "Buy now",
                                                 "error-nombre"                          => "Excuse me, you must write a name",
-                                                "error-email"                          => "Excuse me, you must write an email",
+                                                "error-email"                           => "Excuse me, you must write an email",
                                                 "error-mensaje"                          => "Excuse me, you must write a message",
                                                 "error-codigo"                          => "Excuse me, you must write a phone code",
                                                 "error-numero"                          => "Excuse me, you must write a phone number",
@@ -127,9 +127,9 @@ if ( ! function_exists('element'))
                                                 "login"                         => "Login",
                                                 "login-no-existe"                  => "The access data is not registered in the system",
                                                 "login-bloqueado"                  => "Sorry for the user you are trying to login with blocked",
-                                                "login-exito"                  => "Welcome to Sporthouse, you can continue browsing through the web!",
-                                                "login-error"                  => "Sorry, an error occurred while trying to login, please try again later",
-                                                "olvido-contrasena"                         => "Forget Your Password?",
+                                                "login-exito"                       => "Welcome to Sporthouse, you can continue browsing through the web!",
+                                                "login-error"                       => "Sorry, an error occurred while trying to login, please try again later",
+                                                "olvido-contrasena"                 => "Forget Your Password?",
                                                 "mostrar"                         => "Show",
                                                 "por-pagina"                         => "Per page",
                                                 "paginas"                         => "Pages",
@@ -153,9 +153,10 @@ if ( ! function_exists('element'))
                                                 "mi-carrito"                  => "View My Cart",
                                                 "texto-login"                  => "Please click to login session",
                                                 "no-robot"                  => "Prove you are not a robot!",
-                                                "nuestros-contactos"                  => "Our Contacts",
-                                                "registrate-sporthouse"                  => "Join Sporthouse!",
-                                                "no-hay-productos-categoria"                  => "Sorry, there are no products to list in this category...",
+                                                "nuestros-contactos"            => "Our Contacts",
+                                                "registrate-sporthouse"         => "Join Sporthouse!",
+                                                "no-hay-productos-categoria"     => "Sorry, there are no products to list in this category...",
+                                                "recaptcha"                      => "Excuse me, you must prove that you are not a robot.",
                                               );
 
                                                 
@@ -314,6 +315,7 @@ if ( ! function_exists('element'))
                                                 "nuestros-contactos"                  => "Nuestros Contactos",
                                                 "registrate-sporthouse"                  => "Registrate en Sporthouse!",
                                                 "no-hay-productos-categoria"                  => "Disculpe, no hay productos para esta categoria...",
+                                                "recaptcha"                  => "Disculpe, debe probar que no es un robot",
                                                 );
 		
 		

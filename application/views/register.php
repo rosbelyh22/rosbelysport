@@ -132,7 +132,8 @@
                 <div id="clave-error" class="alert alert-danger " style="display: none;" ><?=get_lang("error-clave")?> </div>
                 <div id="pais-error" class="alert alert-danger " style="display: none;" ><?=get_lang("error-pais")?> </div>
                 <div id="direccion-error" class="alert alert-danger " style="display: none;" ><?=get_lang("error-direccion")?> </div>
-                
+                <div id="recaptcha" class="alert alert-danger " style="display: none;" ><?=get_lang("recaptcha")?> </div>
+
                 <h4 class="title" style="color: #df8a13"><?=get_lang("create-una-cuenta")?></h4> <hr>
     		   <form method="post" action="" name="form-agregar-cliente" id="form-agregar-cliente">
     			 <div class="col-sm-4">
@@ -355,7 +356,7 @@
                                 <input type="text" name="numero" id="numero" class="number" style=" border-color: #df8a13;">
                             </div>
                             <label><?=get_lang("no-robot")?>  </label>
-                            <div class="g-recaptcha" data-sitekey="6LdwAxsUAAAAAB1Kg3ajighgH0OL2HdqniO1deYe"></div>
+                            <div id="recaptcha" class="g-recaptcha" data-sitekey="6LdwAxsUAAAAAB1Kg3ajighgH0OL2HdqniO1deYe"></div>
                         </div>
                        <div class="col-sm-4">
                        </div>
